@@ -8,15 +8,22 @@ import pandas as pd
 
 # ---------- Database Connection ----------
 
-def connect_db():
-    return mysql.connector.connect(
+
+connection = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="Shanthi120$",
-        database="placement_db"
+        password="Shanthi120$"
     )
 
+query = "CREATE DATABASE IF NOT EXISTS placement_db"
+cursor = connection.cursor()
+cursor.execute(query)
+cursor.close()
+connection.close()
+connection.commit()
+
 # ---------- Data Models ----------
+
 
 class Student:
     def __init__(self, faker):
