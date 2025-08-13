@@ -186,7 +186,12 @@ def streamlit_ui():
 
 if __name__ == '__main__':
     faker = Faker()
-    conn = connect_db()
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="Shanthi120$",
+        database="placement_db"
+    )
     cursor = conn.cursor()
     create_tables(cursor)
     insert_data(conn, cursor, num_students=100)
