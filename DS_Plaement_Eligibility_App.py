@@ -19,7 +19,7 @@ query = "CREATE DATABASE IF NOT EXISTS placement_db"
 cursor = connection.cursor()
 cursor.execute(query)
 cursor.close()
-connection.close()
+
 connection.commit()
 
 # ---------- Data Models ----------
